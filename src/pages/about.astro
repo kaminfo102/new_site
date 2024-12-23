@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const teamMembers = [
+  {
+    name: 'علی محمدی',
+    role: 'مدیر عامل',
+    image: '/images/team/placeholder.png',
+    bio: 'بیش از ۱۵ سال تجربه در زمینه توسعه نرم‌افزار و مدیریت پروژه‌های فناوری اطلاعات'
+  },
+  {
+    name: 'سارا احمدی',
+    role: 'مدیر فنی',
+    image: '/images/team/placeholder.png',
+    bio: 'متخصص در زمینه هوش مصنوعی و یادگیری ماشین با سابقه همکاری با شرکت‌های بین‌المللی'
+  },
+  {
+    name: 'محمد کریمی',
+    role: 'مدیر محصول',
+    image: '/images/team/placeholder.png',
+    bio: 'کارشناس ارشد مدیریت کسب و کار با تخصص در توسعه محصولات نرم‌افزاری'
+  }
+];
+---
+
+<Layout title="درباره ما | شرکت ما" description="آشنایی با تیم و تاریخچه شرکت ما">
+  <div class="container mx-auto px-4 py-12">
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        درباره شرکت ما
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        ما یک تیم متخصص و با تجربه در زمینه توسعه نرم‌افزار هستیم که از سال ۱۳۹۰ فعالیت خود را آغاز کرده‌ایم.
+        هدف ما ارائه راهکارهای نوآورانه و کارآمد برای کسب و کارها است.
+      </p>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="grid md:grid-cols-2 gap-8 mb-16">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          چشم‌انداز ما
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          تبدیل شدن به یکی از برترین شرکت‌های فناوری اطلاعات در سطح منطقه و ارائه خدمات با کیفیت جهانی
+        </p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          ماموریت ما
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          توسعه راهکارهای نوآورانه و کارآمد برای بهبود فرآیندهای کسب و کار و ایجاد ارزش افزوده برای مشتریان
+        </p>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">
+        تیم ما
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {teamMembers.map(member => (
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+            <img 
+              src={member.image} 
+              alt={member.name}
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                {member.name}
+              </h3>
+              <p class="text-indigo-600 dark:text-indigo-400 mb-4">
+                {member.role}
+              </p>
+              <p class="text-gray-600 dark:text-gray-300">
+                {member.bio}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-indigo-600 text-white rounded-lg p-8">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-bold mb-2">۱۰۰+</div>
+          <div class="text-indigo-200">پروژه موفق</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold mb-2">۵۰+</div>
+          <div class="text-indigo-200">مشتری راضی</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold mb-2">۱۲+</div>
+          <div class="text-indigo-200">سال تجربه</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
